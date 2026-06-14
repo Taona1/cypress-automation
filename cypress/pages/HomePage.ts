@@ -16,7 +16,7 @@ export class HomePage {
   }
 
   clickCart() {
-    cy.get('a[href="/view_cart"]').click();
+    cy.get('a[href="/view_cart"]').first().click();
   }
 
   isLoaded() {

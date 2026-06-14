@@ -16,11 +16,11 @@ describe('Cart', () => {
     cartPage.getCartItems().should('have.length.greaterThan', 0);
   });
 
-  it('cart item count increases after adding a product', () => {
+  it('cart shows one item after adding a product', () => {
     productsPage.visit();
     productsPage.addFirstProductToCart();
-    productsPage.continueShoppingAfterAdd();
-    cy.get('#cart').find('.badge').should('have.text', '1');
+    productsPage.viewCartAfterAdd();
+    cartPage.getCartItems().should('have.length', 1);
   });
 
   it('removes an item from the cart', () => {
