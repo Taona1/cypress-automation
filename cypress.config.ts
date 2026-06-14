@@ -11,5 +11,7 @@ export default defineConfig({
     screenshotOnRunFailure: true,
     specPattern: 'cypress/e2e/**/*.cy.ts',
     supportFile: 'cypress/support/e2e.ts',
+    chromeWebSecurity: false,
+    experimentalModifyObstructiveThirdPartyCode: true,
   },
 });

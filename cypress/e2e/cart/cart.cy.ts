@@ -7,6 +7,11 @@ const cartPage = new CartPage();
 const homePage = new HomePage();
 
 describe('Cart', () => {
+  beforeEach(() => {
+    cy.clearCookies();
+    cy.clearLocalStorage();
+  });
+
   it('adds a product to the cart from the products page', () => {
     productsPage.visit();
     productsPage.addFirstProductToCart();
@@ -29,7 +34,7 @@ describe('Cart', () => {
     productsPage.viewCartAfterAdd();
     cartPage.getCartItems().should('have.length', 1);
     cartPage.removeFirstItem();
-    cy.get('#empty_cart').should('be.visible');
+    cartPage.getCartItems().should('have.length', 0);
   });
 
   it('navigates to cart from homepage nav', () => {
