@@ -1,0 +1,14 @@
+{
+  "name": "cypress-automation",
+  "version": "1.0.0",
+  "description": "Cypress e2e test suite — Automation Exercise",
+  "scripts": {
+    "test": "cypress run",
+    "test:headed": "cypress run --headed",
+    "open": "cypress open"
+  },
+  "devDependencies": {
+    "cypress": "^13.0.0",
+    "typescript": "^5.0.0"
+  }
+}
