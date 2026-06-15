@@ -26,6 +26,9 @@ jobs:
         with:
           browser: chrome
           headed: false
+        env:
+          CYPRESS_TEST_EMAIL: ${{ secrets.CYPRESS_TEST_EMAIL }}
+          CYPRESS_TEST_PASSWORD: ${{ secrets.CYPRESS_TEST_PASSWORD }}
 
       - name: Upload screenshots on failure
         if: failure()
